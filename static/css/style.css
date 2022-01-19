@@ -2,7 +2,7 @@
  * Base
  */
 
-* {
+ * {
   box-sizing: border-box;
 }
 
@@ -446,7 +446,6 @@ details .content {
 
   .links {
     text-align: right;
-    font-size:  50px;
   }
 
   .tutorial-sidebar {
