@@ -1,7 +1,7 @@
-baseURL = "https://generativeartistry.com"
+baseURL = "https://zenberg.org"
 languageCode = "en-us"
-title = "Generative Artistry"
+title = "zenberg"
 pygmentsUseClasses = true
 
 [params]
-description = "Generative art tutorials, news and love."
+description = "Art, radio, news and love."
