@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notifications on zenberg</title>
+    <link>https://zenberg.org/notifications/</link>
+    <description>Recent content in Notifications on zenberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Sep 2019 09:59:00 -0400</lastBuildDate><atom:link href="https://zenberg.org/notifications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Invest</title>
+      <link>https://zenberg.org/notifications/invest/</link>
+      <pubDate>Sun, 29 Sep 2019 09:59:00 -0400</pubDate>
+      
+      <guid>https://zenberg.org/notifications/invest/</guid>
+      <description>INVEST Our first day! The talented Sonia Horn joins us and helps us distribute our famous [&amp;ldquo;Salted Butter Popcorn&amp;rdquo;]
+&amp;ndash;
+zenberg: Hi :) How are you?
+potential investor: I&amp;rsquo;m very well, how are you?
+zenberg: A bit broke because its January!
+potential investor: Ah that sucks.
+&amp;ndash;
+zenberg: How about we make a deal?
+potential investor: Im listening&amp;hellip;
+zenberg: We raise money to help the homeless get off the MuiZENBERG streets before winter 2022.</description>
+    </item>
+    
+    <item>
+      <title>Rest</title>
+      <link>https://zenberg.org/notifications/rest/</link>
+      <pubDate>Sun, 29 Sep 2019 09:59:00 -0400</pubDate>
+      
+      <guid>https://zenberg.org/notifications/rest/</guid>
+      <description>REST zenberg is divided into many subgroups to organise ourselves across Muizenberg, at the moment we are using email to coordinate ourselves but soon it will be automated.
+If any of these subgroups interest you, please email us:
+days@zenberg.org - chronological blog of each day and our activities
+enterprises@zenberg.org - small businesses that make a big change in peoples lives
+episodes@zenberg.org - radio shows exploring the different aspects of life</description>
+    </item>
+    
+  </channel>
+</rss>
