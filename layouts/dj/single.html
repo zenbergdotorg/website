@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ .Title }} | {{ $.Site.Title }}</title>
+
+    <meta charset="utf-8">
+    
+    <meta name="description" content="{{ .Params.teaser }} {{ $.Site.Params.Description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/syntax-highlighting.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        html, body {
+            font: 16pt arial;
+        }
+
+        #{{ .Params.identifier }} {
+            width: 700px;
+            height: 700px;
+            height: 700px;
+            font: 32pt arial;
+        }
+
+    </style>
+
+    <!-- FIXME: load from dist -->
+    <script src="http://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>
+
+
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    // define config car
+    // instantiate nodevis object
+    // draw
+
+    var viz;
+
+    function drawInitial() {
+      var config = {
+        container_id: "{{ .Params.identifier }}",
+        hierarchical: true, 
+        hierarchical_sort_method: "directed",
+        arrows: true,
+        server_url: "bolt://34.141.236.69",
+        server_user: "neo4j",
+        server_password: "test",
+        labels: {
+    "User": {
+    "caption": "name",
+    "size": "pagerank",
+    "community": "community",
+    "image": 'https://visjs.org/images/visjs_logo.png',
+    "font": {
+        "size":26,
+        "color":"#000000"
+    },
+    "title_properties": [
+        "name",
+        "pagerank"
+    ],
+    sizeCypher: "MATCH (n) WHERE id(n) = $id MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+}
+        },
+        relationships: {
+          "INTERACTS": {
+            "thickness": "weight",
+            "caption": false
+          }
+        },
+        initial_cypher: "MATCH (n:User)-[r]->(m:Computer) RETURN n,r,m LIMIT 10"
+      };
+
+      viz = new NeoVis.default(config);
+      viz.render();
+      console.log({{ .Params.identifier }});
+
+    }
+
+    function drawProposed() {
+      var config = {
+        container_id: "viz2",
+        hierarchical: true, 
+        hierarchical_sort_method: "directed",
+        arrows: true,
+        server_url: "bolt://34.141.236.69",
+        server_user: "neo4j",
+        server_password: "test",
+        labels: {
+    "User": {
+    "caption": "name",
+    "size": "pagerank",
+    "community": "community",
+    "image": 'https://visjs.org/images/visjs_logo.png',
+    "font": {
+        "size":26,
+        "color":"#000000"
+    },
+    "title_properties": [
+        "name",
+        "pagerank"
+    ],
+    sizeCypher: "MATCH (n) WHERE id(n) = $id MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+}
+        },
+        relationships: {
+          "INTERACTS": {
+            "thickness": "weight",
+            "caption": false
+          }
+        },
+        initial_cypher: "MATCH (n:User)-[r]->(m:Computer) RETURN n,r,m LIMIT 10"
+      };
+
+      viz = new NeoVis.default(config);
+      viz.render();
+      console.log(viz);
+
+    }
+
+function drawAll(){
+  drawInitial()
+  drawProposed()
+}
+
+    </script>
+
+  </head>
+
+  <body class="tutorial" onload="drawAll()">
+
+    {{ partial "header.html" . }}
+
+    <div class="tutorial-post">
+       {{ partial "tags.html" .}}
+      <div class="tutorial-sidebar">
+      <div id="viz"></div>
+<div id="viz2"></div>
+
+    
+
+      </div>
+      
+
+      <div class="tutorial-content">
+        {{ .Content }}
+      </div>
+    </div>
+   
+    
+    {{ partial "footer.html" . }}
+
+    {{ partial "tracking.html" . }}
+  </body>
+</html>

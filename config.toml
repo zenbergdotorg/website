@@ -1,7 +1,7 @@
-baseURL = "https://zenberg.org"
+baseURL = "https://www.zenberg.org"
 languageCode = "en-us"
 title = "zenberg"
 pygmentsUseClasses = true
 
 [params]
-description = "Art, radio, news and love."
+description = "African Styles"

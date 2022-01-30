@@ -16,33 +16,65 @@
   </head>
   <body class="main">
     {{ partial "header.html" . }}
-    <iframe src="https://radio.zenberg.org/public/zenberg/embed?theme=light" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; border: 0;"></iframe>
     <article class="home-options">
-      <div class="main-option">
-        <a href="/enterprises">
-          <h2>Enterprises</h2>
-          <p>
-            Small, but proud. 
+      <div class="main-option" style="background: blue">
+        <a href="https://github.com/BloodHoundAD/BloodHound" target="_blank">
+          <h2>Community</h2>
+           <br>
+          <p class="typing-demo" style="border-right: none;">
+            Host and Attend
+            
           </p>
-          <p class="get-started">
-            Share
+          
+           <p class="typing-demo" >
+      
+             Smile and Wave
+           
           </p>
+       <br>
+          <p class="get-started" id="cheatsheet">
+          Expand
+          </p>
+
+      </div>
+      <div class="main-option" style="background: red">
+        <a href="/static/attackers">
+          <h2>Communication</h2>
+           <br>
+          <p class="typing-demo" style="border-right: none;">
+             Talk and Listen</p>
+              <p class="typing-demo" >
+             Chat and Call</p>
+          <br>
+          <p class="get-started" style="color:black">
+            Explore
+          </p>
+
         </a>
       </div>
-      <div class="main-option">
-        <a href="/people">
-          <h2>People</h2>
-          <p>
-            Down, but rising
+            <div class="main-option" style="background: black">
+        <a href="/dynamic" style="color: white;">
+          <h2>Commerce</h2>
+               <br>
+
+          <p class="typing-demo" style="border-right: none;">
+             Buy and Sell  
+          
           </p>
+      
+            <p class="typing-demo">
+          
+             Build and Dream
+          </p>
+           <br>
           <p class="get-started">
-            Support
+             Encourage
           </p>
-        </a>
+            </a>
+       
+          </a>
       </div>
     </article>
-    <!-- <iframe src="http://34.65.244.1/public/zenberg" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 800px; border: 0;"></iframe> -->
     {{ partial "footer.html" . }} {{ partial "tracking.html" . }}
     <script src="/js/favicon.js"></script>
-  </body>
 </html>

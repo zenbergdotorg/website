@@ -40,7 +40,7 @@
       <div class="tutorial-content">
         <h1 id="jamie">Jamie</h1>
 <p>Replicating <a href="https://en.wikipedia.org/wiki/Piet_Mondrian">Piet Mondrian&rsquo;s</a> art with code is no easy task, in fact honestly I&rsquo;d say there&rsquo;s no real way of pinning down his creations entirely with code, they were hand made. That said, we can try to replicate something within the realm of what would have been one of Piet&rsquo;s works&hellip; so that&rsquo;s what we will do in this tutorial&hellip; and yes, we will add the color as well.</p>
-<p>As usual, here is our initial setup. Using <code>window.devicePixelRatio</code> to scale the canvas on retina screens, and setting our canvas size, with only a html <code>&lt;canvas&gt;</code> on the page.</p>
+<p>As usual, here is our initial setup. Using `window.devicePixelRatio` to scale the canvas on retina screens, and setting our canvas size, with only a html `&lt;canvas&gt;` on the page.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Now, the approach I&rsquo;d like to take isn&rsquo;t perfect, but what I&rsquo;d like to do is start with a big square (the canvas) and then start to divide it up&hellip; we will pick a line, either horizontally or vertically and break any squares in that area&hellip; after that, we&rsquo;ll add some random to the splitting, so not all squares are split, which should give us something around the famous Mondrian look, albeit probably a little more mathematically rigid.</p>
@@ -53,34 +53,34 @@
 <p>Now, we can create a function to find which squares should be split&hellip; and then the function to split the square in the direction we&rsquo;ve given.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>You can see at the bottom that I&rsquo;m also calling the split the squares on the <code>x</code> and <code>y</code>, both in the middle. If these work, we&rsquo;ll know we can do a lot more splitting. But for now, these will be great for testing.</p>
-<p>First, the <code>splitSquaresWith</code> function.</p>
+<p>You can see at the bottom that I&rsquo;m also calling the split the squares on the `x` and `y`, both in the middle. If these work, we&rsquo;ll know we can do a lot more splitting. But for now, these will be great for testing.</p>
+<p>First, the `splitSquaresWith` function.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>There&rsquo;s a bit going on here, including some cheeky little tricks.</p>
 <ul>
-<li><code>const { x, y } = coordinates</code> is extracting the <code>x</code> and <code>y</code> variables out of the object we&rsquo;re passing, eg <code>{x: 160}</code> or <code>{y: 160}</code></li>
-<li>We&rsquo;re looping backwards through the squares with <code>(var i = squares.length - 1; i &gt;= 0; i--)</code> this is because we&rsquo;re taking elements <strong>out</strong> of the loop (and replacing them with 2 squares), looping backwards means the order will stay the same, and the new items won&rsquo;t be split again.</li>
+<li>`const { x, y } = coordinates` is extracting the `x` and `y` variables out of the object we&rsquo;re passing, eg `{x: 160}` or `{y: 160}`</li>
+<li>We&rsquo;re looping backwards through the squares with `(var i = squares.length - 1; i &gt;= 0; i--)` this is because we&rsquo;re taking elements <strong>out</strong> of the loop (and replacing them with 2 squares), looping backwards means the order will stay the same, and the new items won&rsquo;t be split again.</li>
 </ul>
-<p>Of course, our single square has disappeared because we need to fill out the <code>splitOn</code> functions, these are going to look pretty similar.</p>
+<p>Of course, our single square has disappeared because we need to fill out the `splitOn` functions, these are going to look pretty similar.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>And&hellip;</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>These two functions are creating two squares, where the previous single square was, and then adding them back into our <code>squares</code> array. You can see by splitting in the two centers, we&rsquo;ve made a window.</p>
-<p>Instead of our two practice splits, we&rsquo;ll create a <code>step</code> variable, and split on that step over and over.</p>
+<p>These two functions are creating two squares, where the previous single square was, and then adding them back into our `squares` array. You can see by splitting in the two centers, we&rsquo;ve made a window.</p>
+<p>Instead of our two practice splits, we&rsquo;ll create a `step` variable, and split on that step over and over.</p>
 <!-- raw HTML omitted -->
 <p>And then the loop.</p>
 <!-- raw HTML omitted -->
-<p>Whew, that was a lot of set up&hellip; we can get into the <code>random</code> now. Rather than splitting each and every square when we hit it, we&rsquo;ll only split them half the time.</p>
+<p>Whew, that was a lot of set up&hellip; we can get into the `random` now. Rather than splitting each and every square when we hit it, we&rsquo;ll only split them half the time.</p>
 <!-- raw HTML omitted -->
-<p>Ooh, looking good. And on the <code>y</code> axis too!</p>
+<p>Ooh, looking good. And on the `y` axis too!</p>
 <!-- raw HTML omitted -->
 <p>And there we have it, the shapes and structure we want! As always, with these tutorials you can hit the small arrow sitting between the editor and the demo and the code will rerun, if you press it a few times now, you&rsquo;ll see our Mondrian structure take a few different shapes.</p>
 <p>Let&rsquo;s add some color in. First the variables, using those beautiful red, blue and yellow colors.</p>
 <!-- raw HTML omitted -->
-<p>We&rsquo;ll pick three random squares, and give each of them a <code>color</code>. You might see only one or two colors, and that is because the same square was randomly selected twice.</p>
+<p>We&rsquo;ll pick three random squares, and give each of them a `color`. You might see only one or two colors, and that is because the same square was randomly selected twice.</p>
 <!-- raw HTML omitted -->
 <p>And of course, making sure the draw function colors them in.</p>
 <!-- raw HTML omitted -->
