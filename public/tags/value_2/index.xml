@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>value_2 on zenberg</title>
+    <link>https://www.zenberg.org/tags/value_2/</link>
+    <description>Recent content in value_2 on zenberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Sep 2019 09:59:00 -0400</lastBuildDate><atom:link href="https://www.zenberg.org/tags/value_2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>create_node_statistics</title>
+      <link>https://www.zenberg.org/dj/jamie/</link>
+      <pubDate>Sun, 29 Sep 2019 09:59:00 -0400</pubDate>
+      
+      <guid>https://www.zenberg.org/dj/jamie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qa</title>
+      <link>https://www.zenberg.org/dj/sonia/</link>
+      <pubDate>Sun, 29 Sep 2019 09:59:00 -0400</pubDate>
+      
+      <guid>https://www.zenberg.org/dj/sonia/</guid>
+      <description>create_qa_statistics def create_qa_statistics(self, sheet): session = self.driver.session() computer_local_admin_pct = 0 computer_session_pct = 0 user_session_pct = 0 query = &amp;quot;&amp;quot;&amp;quot;MATCH (n)-[:AdminTo]-&amp;gt;(c:Computer {domain:{domain}}) WITH COUNT(DISTINCT(c)) as computersWithAdminsCount MATCH (c2:Computer {domain:{domain}}) RETURN toInt(100 * (toFloat(computersWithAdminsCount) / COUNT(c2))) &amp;quot;&amp;quot;&amp;quot; for result in session.run(query, domain=self.domain): computer_local_admin_pct = result[0] query = &amp;quot;&amp;quot;&amp;quot;MATCH (c:Computer {domain:{domain}})-[:HasSession]-&amp;gt;() WITH COUNT(DISTINCT(c)) as computersWithSessions MATCH (c2:Computer {domain:{domain}}) RETURN toInt(100 * (toFloat(computersWithSessions) / COUNT(c2))) &amp;quot;&amp;quot;&amp;quot; for result in session.run(query, domain=self.domain): computer_session_pct = result[0] query = &amp;quot;&amp;quot;&amp;quot;MATCH ()-[:HasSession]-&amp;gt;(u:User {domain:{domain}}) WITH COUNT(DISTINCT(u)) as usersWithSessions MATCH (u2:User {domain:{domain},enabled:true}) RETURN toInt(100 * (toFloat(usersWithSessions) / COUNT(u2))) &amp;quot;&amp;quot;&amp;quot; for result in session.</description>
+    </item>
+    
+  </channel>
+</rss>

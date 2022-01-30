@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <title>create_node_statistics | zenberg</title>
+
+    <meta charset="utf-8">
+    
+    <meta name="description" content=" African Styles">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/syntax-highlighting.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        html, body {
+            font: 16pt arial;
+        }
+
+        #viz2 {
+            width: 700px;
+            height: 700px;
+            height: 700px;
+            font: 32pt arial;
+        }
+
+    </style>
+
+    
+    <script src="http://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>
+
+
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    
+    
+    
+
+    var viz;
+
+    function drawInitial() {
+      var config = {
+        container_id: "viz2",
+        hierarchical: true, 
+        hierarchical_sort_method: "directed",
+        arrows: true,
+        server_url: "bolt://34.141.236.69",
+        server_user: "neo4j",
+        server_password: "test",
+        labels: {
+    "User": {
+    "caption": "name",
+    "size": "pagerank",
+    "community": "community",
+    "image": 'https://visjs.org/images/visjs_logo.png',
+    "font": {
+        "size":26,
+        "color":"#000000"
+    },
+    "title_properties": [
+        "name",
+        "pagerank"
+    ],
+    sizeCypher: "MATCH (n) WHERE id(n) = $id MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+}
+        },
+        relationships: {
+          "INTERACTS": {
+            "thickness": "weight",
+            "caption": false
+          }
+        },
+        initial_cypher: "MATCH (n:User)-[r]->(m:Computer) RETURN n,r,m LIMIT 10"
+      };
+
+      viz = new NeoVis.default(config);
+      viz.render();
+      console.log("viz2");
+
+    }
+
+    function drawProposed() {
+      var config = {
+        container_id: "viz2",
+        hierarchical: true, 
+        hierarchical_sort_method: "directed",
+        arrows: true,
+        server_url: "bolt://34.141.236.69",
+        server_user: "neo4j",
+        server_password: "test",
+        labels: {
+    "User": {
+    "caption": "name",
+    "size": "pagerank",
+    "community": "community",
+    "image": 'https://visjs.org/images/visjs_logo.png',
+    "font": {
+        "size":26,
+        "color":"#000000"
+    },
+    "title_properties": [
+        "name",
+        "pagerank"
+    ],
+    sizeCypher: "MATCH (n) WHERE id(n) = $id MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+}
+        },
+        relationships: {
+          "INTERACTS": {
+            "thickness": "weight",
+            "caption": false
+          }
+        },
+        initial_cypher: "MATCH (n:User)-[r]->(m:Computer) RETURN n,r,m LIMIT 10"
+      };
+
+      viz = new NeoVis.default(config);
+      viz.render();
+      console.log(viz);
+
+    }
+
+function drawAll(){
+  drawInitial()
+  drawProposed()
+}
+
+    </script>
+
+  </head>
+
+  <body class="tutorial" onload="drawAll()">
+
+    <header>
+  <div class="wrapper">
+
+    <a class="logo" href="/">zenberg</a>
+    <div class="links">
+      <a href="/notifications/sign-up">donate</a> or
+      <a href="/notifications/contact-us">participate</a>
+    </div>
+  </div>
+</header>
+
+    <div class="tutorial-post">
+        
+<ul class="tags">
+   <li><a href="https://www.zenberg.org/tags/value_1/" class="tag">value_1</a></li> <li><a href="https://www.zenberg.org/tags/value_2/" class="tag">value_2</a></li></ul>
+
+
+      <div class="tutorial-sidebar">
+      <div id="viz"></div>
+<div id="viz2"></div>
+
+    
+
+      </div>
+      
+
+      <div class="tutorial-content">
+        
+      </div>
+    </div>
+   
+    
+    
+<footer>
+  <div class="wrapper">
+    <div class="links">
+      By <a href="/dj/jamie">jamie</a>,
+      <a href="/dj/jiggy" >jiggy</a> &
+      <a href="/dj/sonia" >sonia</a>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX5RSHB2F1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZX5RSHB2F1');
+</script>
+  </body>
+</html>

@@ -2,9 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on zenberg</title>
-    <link>https://zenberg.org/tags/</link>
+    <link>https://www.zenberg.org/tags/</link>
     <description>Recent content in Tags on zenberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://zenberg.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Sep 2019 09:59:00 -0400</lastBuildDate><atom:link href="https://www.zenberg.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>value_1</title>
+      <link>https://www.zenberg.org/tags/value_1/</link>
+      <pubDate>Sun, 29 Sep 2019 09:59:00 -0400</pubDate>
+      
+      <guid>https://www.zenberg.org/tags/value_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>value_2</title>
+      <link>https://www.zenberg.org/tags/value_2/</link>
+      <pubDate>Sun, 29 Sep 2019 09:59:00 -0400</pubDate>
+      
+      <guid>https://www.zenberg.org/tags/value_2/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
